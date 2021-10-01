@@ -1,10 +1,10 @@
 public abstract class Gun : IWeapon
 {
-    public int Damage;
-    public int ClipSize;
-    public int BulletsLeft;
-    public float ReloadTime;
-    public bool CanScope;
+    public int damage;
+    public int clipSize;
+    public int bulletsLeft;
+    public float reloadTime;
+    public bool canScope;
 
     protected virtual void OnEnable()
     {

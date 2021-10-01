@@ -1,8 +1,8 @@
 public class Bullet
 {
-    public int damage { get; set; }
-
     public float lifeTime;
+
+    public int Damage { get; set; }
 
     public void SetLifeTime(float _lifeTime)
     {

@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class InputManager
 {
-    private GameManager gameManager;
     public Dictionary<KeyCode, EventType> keybindings = new Dictionary<KeyCode, EventType>();
+
+    private GameManager gameManager;
 
     public InputManager(GameManager _gameManager)
     {

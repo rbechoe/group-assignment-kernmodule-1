@@ -6,10 +6,10 @@ public class AssaultRifle : Gun
     public AssaultRifle(WeaponManager _weaponManager, int _damage, float _reloadTime, int _clipSize)
     {
         weaponManager = _weaponManager;
-        Damage = _damage;
-        ReloadTime = _reloadTime;
-        ClipSize = _clipSize;
-        BulletsLeft = _clipSize;
-        CanScope = true;
+        damage = _damage;
+        reloadTime = _reloadTime;
+        clipSize = _clipSize;
+        bulletsLeft = _clipSize;
+        canScope = true;
     }
 }
