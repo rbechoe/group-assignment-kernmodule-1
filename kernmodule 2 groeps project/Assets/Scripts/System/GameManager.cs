@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     private InputManager inputManager;
     private WeaponManager weaponManager;
 
+    private Locomotion locomotion;
+    private PlayerMovement playerMovement;
+
     private List<Bullet> inactiveBullets;
     private List<Bullet> activeBullets;
 
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         inputManager.CheckInput();
+        locomotion.OnUpdate();
     }
 
     private void OnEnable()
