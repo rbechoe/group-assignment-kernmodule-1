@@ -8,7 +8,7 @@ public class StateMachine
 
     public void SetState(State _state)
     {
-        //set the state that is currently active
+        //set the state that is currently active$
         state = _state;
     }
 }

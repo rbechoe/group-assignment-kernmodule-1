@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : Locomotion
 {
-    public void OnEnable()
+    private GameManager gameManager;
+    public PlayerMovement(GameManager _gameManager)
     {
+        gameManager = _gameManager;
         EventSystem.AddListener(EventType.INPUT_FORWARD, state.OnMoveForward);
         EventSystem.AddListener(EventType.INPUT_DOWN, state.OnMoveBackward);
         EventSystem.AddListener(EventType.INPUT_LEFT, state.OnMoveLeft);
         EventSystem.AddListener(EventType.INPUT_RIGHT, state.OnMoveRight);
     }
-    private void OnDisable()
+    ~PlayerMovement()
     {
         EventSystem.RemoveListener(EventType.INPUT_FORWARD, state.OnMoveForward);
         EventSystem.RemoveListener(EventType.INPUT_DOWN, state.OnMoveBackward);
