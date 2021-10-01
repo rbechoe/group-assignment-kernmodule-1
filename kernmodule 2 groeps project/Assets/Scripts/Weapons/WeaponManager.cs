@@ -10,14 +10,12 @@ public class WeaponManager
     public WeaponManager(GameManager _gameManager)
     {
         gameManager = _gameManager;
-        // add listeners
         EventSystem.AddListener(EventType.INPUT_NEXT_WEP, NextWeapon);
         EventSystem.AddListener(EventType.INPUT_PREV_WEP, PrevWeapon);
     }
 
     ~WeaponManager()
     {
-        // remove listeners
         EventSystem.RemoveListener(EventType.INPUT_NEXT_WEP, NextWeapon);
         EventSystem.RemoveListener(EventType.INPUT_PREV_WEP, PrevWeapon);
     }

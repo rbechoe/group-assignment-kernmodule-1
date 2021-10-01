@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,8 @@ public class GameManager : MonoBehaviour
     private Locomotion locomotion;
     private PlayerMovement playerMovement;
 
+    private EnemyManager enemyManager;
+
     private List<Bullet> inactiveBullets;
     private List<Bullet> activeBullets;
 
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour
     {
         inputManager = new InputManager(this);
         weaponManager = new WeaponManager(this);
+
+        enemyManager = new EnemyManager(this);
+
         inactiveBullets = new List<Bullet>(500);
     }
 
@@ -26,22 +30,14 @@ public class GameManager : MonoBehaviour
     {
         inputManager.CheckInput();
         locomotion.OnUpdate();
-    }
-
-    private void OnEnable()
-    {
-        // set all listeners
-    }
-
-    private void OnDisable()
-    {
-        // remove all listeners
+        enemyManager.OnUpdate();
     }
 
     // get an inactive bullet from the list to use
     public Bullet GetBullet()
     {
         Bullet bullet = null;
+
         if (inactiveBullets.Count > 0)
         {
             bullet = inactiveBullets[0];

@@ -8,14 +8,12 @@ public abstract class Gun : IWeapon
 
     public Gun()
     {
-        // set listeners
         EventSystem.AddListener(EventType.INPUT_SHOOT, FireWeapon);
         EventSystem.AddListener(EventType.INPUT_RELOAD, ReloadWeapon);
     }
 
     ~Gun()
     {
-        // remove listeners
         EventSystem.RemoveListener(EventType.INPUT_SHOOT, FireWeapon);
         EventSystem.RemoveListener(EventType.INPUT_RELOAD, ReloadWeapon);
     }
