@@ -6,10 +6,10 @@ public class Pistol : Gun
     public Pistol(WeaponManager _weaponManager, int _damage, float _reloadTime, int _clipSize)
     {
         weaponManager = _weaponManager;
-        Damage = _damage;
-        ReloadTime = _reloadTime;
-        ClipSize = _clipSize;
-        BulletsLeft = _clipSize;
-        CanScope = false;
+        damage = _damage;
+        reloadTime = _reloadTime;
+        clipSize = _clipSize;
+        bulletsLeft = _clipSize;
+        canScope = false;
     }
 }
