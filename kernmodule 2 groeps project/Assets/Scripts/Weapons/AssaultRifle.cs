@@ -1,4 +1,4 @@
-public class AssaultRifle : Gun, IWeapon
+public class AssaultRifle : Gun
 {
     private WeaponManager weaponManager;
 
@@ -11,29 +11,5 @@ public class AssaultRifle : Gun, IWeapon
         ClipSize = _clipSize;
         BulletsLeft = _clipSize;
         CanScope = true;
-    }
-
-    private void OnEnable()
-    {
-        // set listeners
-        EventSystem.AddListener(EventType.INPUT_SHOOT, FireWeapon);
-        EventSystem.AddListener(EventType.INPUT_RELOAD, ReloadWeapon);
-    }
-
-    private void OnDisable()
-    {
-        // remove listeners
-        EventSystem.RemoveListener(EventType.INPUT_SHOOT, FireWeapon);
-        EventSystem.RemoveListener(EventType.INPUT_RELOAD, ReloadWeapon);
-    }
-
-    public void FireWeapon()
-    {
-        // shoot bullet
-    }
-
-    public void ReloadWeapon()
-    {
-        // reload weapon
     }
 }
