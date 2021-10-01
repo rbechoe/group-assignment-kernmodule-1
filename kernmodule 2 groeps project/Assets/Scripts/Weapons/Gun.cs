@@ -6,14 +6,14 @@ public abstract class Gun : IWeapon
     public float reloadTime;
     public bool canScope;
 
-    protected virtual void OnEnable()
+    public Gun()
     {
         // set listeners
         EventSystem.AddListener(EventType.INPUT_SHOOT, FireWeapon);
         EventSystem.AddListener(EventType.INPUT_RELOAD, ReloadWeapon);
     }
 
-    protected virtual void OnDisable()
+    ~Gun()
     {
         // remove listeners
         EventSystem.RemoveListener(EventType.INPUT_SHOOT, FireWeapon);
